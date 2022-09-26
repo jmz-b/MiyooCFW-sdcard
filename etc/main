@@ -67,6 +67,10 @@ mount /dev/mmcblk0p4 "${HOME}" -t vfat -o rw,sync,utf8
 echo -e "\e[32mCheck complete.\e[0m"
 fi
 
+# HACK: give all modules a second to finish initializing
+# fixes no display output for boot-logo executable
+sleep 1s
+
 clear
 
 echo "Boot!" >> "${LOGS}"
